@@ -79,5 +79,14 @@ class Deferred extends Registry {
 
 	}
 
+	/**
+	 * method to get a value in $this->map without calling it
+	 * @param string $key The key of the value
+	 * @return mixed
+	 */
+	function raw($key){
+		return parent::get($key);
+	}
+
 }
 

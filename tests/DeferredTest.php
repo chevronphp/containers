@@ -91,3 +91,23 @@ FUnit::test("Deferred::get()", function(){
 	FUnit::equal($val, 9, "scalar");
 
 });
+
+FUnit::test("Deferred::raw()", function(){
+
+	$R = new Containers\Deferred;
+
+	$R->set("bloop", function(){ return md5(mt_rand(1,999)); });
+
+	$val1 = $R->raw("bloop");
+	$val2 = $R->get("bloop");
+	$val3 = $R->raw("bloop");
+	$val4 = $R->get("bloop", true);
+	$val5 = $R->raw("bloop");
+
+	FUnit::ok(($val1 InstanceOf Closure), "InstanceOf Closure");
+	FUnit::ok(ctype_xdigit($val2), "ctype_xdigit");
+	FUnit::ok(($val3 InstanceOf Closure), "InstanceOf Closure");
+	FUnit::ok(ctype_xdigit($val4), "ctype_xdigit");
+	FUnit::ok(($val5 InstanceOf Closure), "InstanceOf Closure");
+
+});
