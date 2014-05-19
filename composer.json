@@ -1,5 +1,5 @@
 {
-	"name"        : "henderjon/chevron.containers",
+	"name"        : "henderjon/chevron-containers",
 	"type"        : "library",
 	"description" : "an implementation of the registry pattern for fun and profit",
 	"homepage"    : "http://github.com/henderjon/chevron.containers",
