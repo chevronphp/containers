@@ -6,7 +6,7 @@ namespace Chevron\Containers\Interfaces;
  *
  * @package Chevron\Container
  */
-interface ListInterface {
+interface SetInterface {
 
 	/**
 	 * unshift values to our list

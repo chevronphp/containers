@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class List implements Interfaces\ListInterface, \Countable, \IteratorAggregate {
+class Set implements Interfaces\SetInterface, \Countable, \IteratorAggregate {
 
 	/**
 	 * hold our values internally
@@ -36,7 +36,7 @@ class List implements Interfaces\ListInterface, \Countable, \IteratorAggregate {
 	 * @return mixed
 	 */
 	function lpop(){
-		if($this->length() <= 0) return null;
+		if($this->count() <= 0) return null;
 		return array_shift($this->map);
 	}
 
@@ -45,7 +45,7 @@ class List implements Interfaces\ListInterface, \Countable, \IteratorAggregate {
 	 * @return mixed
 	 */
 	function rpop(){
-		if($this->length() <= 0) return null;
+		if($this->count() <= 0) return null;
 		return array_pop($this->map);
 	}
 
