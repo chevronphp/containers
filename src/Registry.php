@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Registry implements \Countable {
+class Registry implements \Countable, \IteratorAggregate {
 	/**
 	 * The underlying storage array
 	 */
@@ -55,14 +55,6 @@ class Registry implements \Countable {
 	}
 
 	/**
-	 * Method to retrieve the number of values in the registry
-	 * @return int
-	 */
-	function length(){
-		return count($this->map);
-	}
-
-	/**
 	 * Method to get an Iterator for the registry, allows looping
 	 * @return ArrayIterator
 	 */
@@ -76,6 +68,6 @@ class Registry implements \Countable {
 	 * @return int
 	 */
 	function count() {
-		return $this->length();
+		return count($this->map);
 	}
 }

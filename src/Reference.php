@@ -8,6 +8,11 @@ namespace Chevron\Containers;
  * @package Chevron\Container
  */
 class Reference extends Registry {
+
+	/**
+	 * The internal data array
+	 */
+	// protected $map = array();
 	/**
 	 * If an array is passed to the constructor, it is assigned by REFERENCE
 	 * This is useful for a generic API to interact with the SESSION array
