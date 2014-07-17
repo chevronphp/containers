@@ -9,11 +9,11 @@ FUnit::test("Registry::length() && Registry::set()", function(){
 
 	$R = new Containers\Registry;
 
-	$pre = $R->length();
+	$pre = count($R);
 
 	$R->set("bloop", "bleep");
 
-	$post = $R->length();
+	$post = count($R);
 
 	FUnit::equal($pre, 0, "has zero before");
 	FUnit::equal($post, 1, "has non-zero after");
@@ -24,7 +24,7 @@ FUnit::test("Registry::has()", function(){
 
 	$R = new Containers\Registry;
 
-	$pre = $R->length();
+	$pre = count($R);
 
 	$R->set("bloop", "bleep");
 
@@ -38,7 +38,7 @@ FUnit::test("Registry::setMany()", function(){
 
 	$R = new Containers\Registry;
 
-	$pre = $R->length();
+	$pre = count($R);
 
 	$R->setMany(array(
 		"bloop" => "bleep",
@@ -46,7 +46,7 @@ FUnit::test("Registry::setMany()", function(){
 		"blope" => "blepe",
 	));
 
-	$post = $R->length();
+	$post = count($R);
 
 	FUnit::equal($pre, 0, "has zero before");
 	FUnit::equal($post, 3, "has non-zero after");

@@ -7,11 +7,12 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Registry implements \Countable, \IteratorAggregate {
+class Registry implements Interfaces\RegistryInterface, \Countable, \IteratorAggregate {
 	/**
 	 * The underlying storage array
 	 */
 	protected $map = array();
+
 	/**
 	 * Method to set a single value in the registry
 	 * @param scalar $key The key at which to store the value

@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Reference extends Registry {
+class Reference extends Registry implements Interfaces\RegistryInterface {
 
 	/**
 	 * The internal data array
