@@ -4,7 +4,6 @@ require_once "vendor/autoload.php";
 
 use Chevron\Containers;
 
-
 FUnit::test("Registry::length() && Registry::set()", function(){
 
 	$R = new Containers\Registry;

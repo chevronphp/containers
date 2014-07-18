@@ -4,7 +4,6 @@ require_once "vendor/autoload.php";
 
 use Chevron\Containers;
 
-
 FUnit::test("Set", function(){
 
 	$R = new Containers\Set;
