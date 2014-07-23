@@ -69,12 +69,12 @@ class Set implements Interfaces\SetInterface, \Countable, \IteratorAggregate {
 	 * spin off a generator for our list
 	 * @yield \Generator
 	 */
-	function range($rev = false){
-		$map = $rev ? array_reverse($this->map) : $this->map;
-		foreach($map as $value){
-			yield $value;
-		}
-	}
+	// function range($rev = false){
+	// 	$map = $rev ? array_reverse($this->map) : $this->map;
+	// 	foreach($map as $value){
+	// 		yield $value;
+	// 	}
+	// }
 
 }
 
