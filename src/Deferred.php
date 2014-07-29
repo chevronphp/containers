@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Deferred extends Registry implements Interfaces\DeferredInterface {
+class Deferred extends Registry implements Interfaces\DeferredInterface, Interfaces\DiInterface {
 
 	/**
 	 * an additional map for storing the return of singleton lambdas

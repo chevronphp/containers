@@ -4,6 +4,14 @@ use Chevron\Containers;
 
 class DeferredTest extends PHPUnit_Framework_TestCase {
 
+	function test_interfaces(){
+
+		$R = new Containers\Deferred;
+		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DeferredInterface", $R);
+		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DiInterface", $R);
+
+	}
+
 	function test_invoke(){
 
 		$R = new Containers\Deferred;
