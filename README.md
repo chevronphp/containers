@@ -5,6 +5,12 @@ base container takes values and returns them, the deferred container is built
 to handle callables, and the reference container is meant to handle maps--wait
 for it--by reference.
 
+Containers started as a pretty basic set of registry objects because you end up
+using them everywhere. Deferred, however, ended up making a pretty good simple
+DI container. But "Deferred" isn't as intuitive as "Di", which is why there is
+a DiInterface (for typehints) and a ServiceLoader for creating and populating
+the Di.
+
 # usage
 
 If there isn't an examples dir, look through the tests.
