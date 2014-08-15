@@ -11,32 +11,9 @@ DI container. But "Deferred" isn't as intuitive as "Di", which is why there is
 a DiInterface (for typehints) and a ServiceLoader for creating and populating
 the Di.
 
-# usage
+Peruse the tests or, if present, the examples directory to see usage.
 
-If there isn't an examples dir, look through the tests.
+See [packagist](https://packagist.org/packages/henderjon/chevron-containers) for version/installation info. At the moment, I recommend using `~3.0`.
 
-# installation
-
-Using [composer](http://getcomposer.org/) `"require" : { "henderjon/chevron-containers": "~3.0" }`
-
-# license
-
-See LICENSE.md for the [BSD-3-Clause](http://opensource.org/licenses/BSD-3-Clause) license.
-
-## links
-
-  - The [Packagist archive](https://packagist.org/packages/henderjon/chevron-containers)
-  - Reading on [Semantic Versioning](http://semver.org/)
-  - Reading on [Composer Versioning](https://getcomposer.org/doc/01-basic-usage.md#package-versions)
-
-### cool kids badges
-
-#### travis
-
+[![Latest Stable Version](https://poser.pugx.org/henderjon/chevron-containers/v/stable.svg)](https://packagist.org/packages/henderjon/chevron-containers)
 [![Build Status](https://travis-ci.org/henderjon/chevron.containers.svg?branch=master)](https://travis-ci.org/henderjon/chevron.containers)
-
-#### scruitinizer
-
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/henderjon/chevron.containers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.containers/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/henderjon/chevron.containers/badges/build.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.containers/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/henderjon/chevron.containers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/henderjon/chevron.containers/?branch=master)
