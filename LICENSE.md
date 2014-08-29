@@ -1,4 +1,4 @@
-[![License](https://poser.pugx.org/henderjon/chevron-containers/license.svg)](https://packagist.org/packages/henderjon/chevron-containers)
+[![License](https://poser.pugx.org/chevron/containers/license.svg)](https://packagist.org/packages/chevron/containers)
 
 Copyright (c) 2012, Jon Henderson (@henderjon) All rights reserved.
 

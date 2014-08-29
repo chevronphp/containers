@@ -13,7 +13,7 @@ the Di.
 
 Peruse the tests or, if present, the examples directory to see usage.
 
-See [packagist](https://packagist.org/packages/henderjon/chevron-containers) for version/installation info. At the moment, I recommend using `~3.0`.
+See [packagist](https://packagist.org/packages/chevron/containers) for version/installation info. At the moment, I recommend using `"chevron/containers":"~3.0"`.
 
-[![Latest Stable Version](https://poser.pugx.org/henderjon/chevron-containers/v/stable.svg)](https://packagist.org/packages/henderjon/chevron-containers)
-[![Build Status](https://travis-ci.org/henderjon/chevron.containers.svg?branch=master)](https://travis-ci.org/henderjon/chevron.containers)
+[![Latest Stable Version](https://poser.pugx.org/chevron/containers/v/stable.svg)](https://packagist.org/packages/chevron/containers)
+[![Build Status](https://travis-ci.org/chevronphp/containers.svg?branch=master)](https://travis-ci.org/chevronphp/containers)
