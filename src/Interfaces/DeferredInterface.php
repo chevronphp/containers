@@ -9,19 +9,19 @@ namespace Chevron\Containers\Interfaces;
 interface DeferredInterface extends RegistryInterface {
 
 	/**
-	 * method to call the lambda stored at $tag and pass a payload at invokation
-	 * @param string $key The lambda
-	 * @param array $args The values to pass to the lambda
+	 * Method to retrieve the value stored at key. Allows for Di style lambda or
+	 * scalar retrieval.
+	 * @param string $key The key of the value to retrieve
 	 * @return mixed
 	 */
-	function invoke($key, array $args = array());
+	function get($key);
 
 	/**
-	 * method to retrieve a singleton value from the deferred registry
-	 * @param string $key The lambda
-	 * @param array $args The values to pass to the lambda
+	 * Method to retrieve the value stored at key via another invocation.
+	 * @param string $key The key of the value to retrieve
+	 * @param array $args The args to pass the callable
 	 * @return mixed
 	 */
-	function once($key, array $args = array());
+	function getNew($key, array $args = []);
 
 }

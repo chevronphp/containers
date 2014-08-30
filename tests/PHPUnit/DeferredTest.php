@@ -16,71 +16,41 @@ class DeferredTest extends PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_invoke(){
+	function test_getNew(){
 
 		$R = new Containers\Deferred;
 		$R->set("bloop", function(){ return 5; });
-		$val = $R->invoke("bloop", array());
+		$val = $R->getNew("bloop", array());
 		$this->assertEquals($val, 5);
 
 	}
 
-	function test___call(){
-
-		$R = new Containers\Deferred;
-		$R->set("bloop", function(){ return 5; });
-		$val = $R->bloop();
-		$this->assertEquals($val, 5);
-
-	}
-
-	function test_invoke_w_args(){
+	function test_getNew_w_args(){
 
 		$R = new Containers\Deferred;
 		$R->set("bloop", function($n){ return $n; });
 		$in = "This is a test";
-		$out = $R->invoke("bloop", array($in));
+		$out = $R->getNew("bloop", array($in));
 		$this->assertEquals($in, $out);
 
 	}
 
-	function test___call_w_arg(){
-
-		$R = new Containers\Deferred;
-		$R->set("bloop", function($n){ return $n; });
-		$in = "This is a test";
-		$out = $R->bloop($in);
-		$this->assertEquals($in, $out);
-
-	}
-
-	function test_invoke_w_many_args(){
+	function test_getNew_w_many_args(){
 
 		$R = new Containers\Deferred;
 		$R->set("bloop", function($a, $b){ return $a + $b; });
-		$out = $R->invoke("bloop", array(3, 4));
+		$out = $R->getNew("bloop", array(3, 4));
 		$this->assertEquals($out, 7);
 
 	}
 
-	function test_invoke_w_many_args_mixed_type(){
+	function test_getNew_w_many_args_mixed_type(){
 
 		$R = new Containers\Deferred;
 		$R->set("bloop", function($a, $b){ return array($a, $b); });
-		$out = $R->invoke("bloop", array("one", array("two" => "three")));
+		$out = $R->getNew("bloop", array("one", array("two" => "three")));
 		$expected = array("one", array("two" => "three"));
 		$this->assertEquals($out, $expected);
-
-	}
-
-	function test_once(){
-
-		$R = new Containers\Deferred;
-		$R->set("bloop", function($a, $b){ return $a + $b; });
-		$result = $R->once("bloop", array(3, 4));
-		$this->assertEquals($result, 7, "initial call");
-		$result = $R->once("bloop", array(5, 6));
-		$this->assertEquals($result, 7, "singleton via multiple calls");
 
 	}
 
@@ -92,7 +62,7 @@ class DeferredTest extends PHPUnit_Framework_TestCase {
 		$R->set("blooper", 9);
 
 		$val1 = $R->get("bloop");
-		$val2 = $R->get("bloop", true);
+		$val2 = $R->getNew("bloop");
 		$val3 = $R->get("bloop");
 
 		$this->assertNotEquals($val1, $val2, "lambda");
