@@ -1,6 +1,8 @@
 <?php
 
-return function( \Chevron\Containers\Interfaces\DiInterface $di ){
+use \Chevron\Containers\Interfaces\DiInterface;
+
+return function( DiInterface $di ){
 
 	$di->set("error", 404);
 

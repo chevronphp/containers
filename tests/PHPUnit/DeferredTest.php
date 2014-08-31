@@ -58,7 +58,7 @@ class DeferredTest extends PHPUnit_Framework_TestCase {
 
 		$R = new Containers\Deferred;
 
-		$R->set("bloop", function(){ return md5(mt_rand(1,999)); });
+		$R->set("bloop", function(){ return md5(mt_rand(1,99999)); });
 		$R->set("blooper", 9);
 
 		$val1 = $R->get("bloop");
