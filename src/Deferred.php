@@ -52,10 +52,6 @@ class Deferred extends Registry implements Interfaces\DeferredInterface, Interfa
 	 */
 	function once($key, array $args = []) {
 
-		if(!array_key_exists($key, $this->map) ) {
-			return null;
-		}
-
 		if(!isset($this->called[$key])) {
 			$this->called[$key] = $this->invoke($key, $args);
 		}
