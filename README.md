@@ -1,4 +1,4 @@
-# chevron.containers
+# chevron/containers
 
 Containers is a simple implementation of a registry pattern. The
 base container takes values and returns them, the deferred container is built
