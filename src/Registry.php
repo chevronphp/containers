@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Registry implements Interfaces\RegistryInterface, \Countable, \IteratorAggregate {
+class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	/**
 	 * The underlying storage array
 	 */

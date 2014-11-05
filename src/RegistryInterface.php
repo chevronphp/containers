@@ -1,6 +1,6 @@
 <?php
 
-namespace Chevron\Containers\Interfaces;
+namespace Chevron\Containers;
 /**
  * establishes the minimum signature of Chevron\Containers\Registry
  *

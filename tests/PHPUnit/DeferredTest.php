@@ -7,12 +7,12 @@ class DeferredTest extends PHPUnit_Framework_TestCase {
 	function test_interfaces(){
 
 		$R = new Containers\Deferred;
-		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DeferredInterface", $R);
-		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DiInterface", $R);
+		$this->assertInstanceOf("\\Chevron\\Containers\\DeferredInterface", $R);
+		$this->assertInstanceOf("\\Chevron\\Containers\\DiInterface", $R);
 
 		$R = new Containers\Di;
-		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DeferredInterface", $R);
-		$this->assertInstanceOf("\\Chevron\\Containers\\Interfaces\\DiInterface", $R);
+		$this->assertInstanceOf("\\Chevron\\Containers\\DeferredInterface", $R);
+		$this->assertInstanceOf("\\Chevron\\Containers\\DiInterface", $R);
 
 	}
 

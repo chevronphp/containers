@@ -1,6 +1,6 @@
 <?php
 
-use \Chevron\Containers\Interfaces\DiInterface;
+use \Chevron\Containers\DiInterface;
 
 return function( DiInterface $di ){
 

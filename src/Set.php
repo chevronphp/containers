@@ -7,7 +7,7 @@ namespace Chevron\Containers;
  *
  * @package Chevron\Container
  */
-class Set implements Interfaces\SetInterface, \Countable, \IteratorAggregate {
+class Set implements SetInterface, \Countable, \IteratorAggregate {
 
 	/**
 	 * hold our values internally
