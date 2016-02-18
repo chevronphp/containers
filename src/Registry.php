@@ -36,7 +36,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 
 	/**
 	 * Method to retrieve the value stored at key
-	 * @param scalar $key The key of the value to retrieve
+	 * @param string $key The key of the value to retrieve
 	 * @return mixed
 	 */
 	public function get($key){
@@ -48,7 +48,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 
 	/**
 	 * Method to determine if the registry has a key
-	 * @param scalar $key The key to check
+	 * @param string $key The key to check
 	 * @return bool
 	 */
 	public function has($key){
@@ -58,7 +58,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	/**
 	 * Method to get an Iterator for the registry, allows looping
 	 * @deprecated
-	 * @return ArrayIterator
+	 * @return \ArrayIterator
 	 */
 	public function getIterator(){
 		return new \ArrayIterator($this->map);
