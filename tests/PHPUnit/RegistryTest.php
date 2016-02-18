@@ -90,5 +90,24 @@ class RegistryTest extends PHPUnit_Framework_TestCase {
 		}
 
 	}
+
+	function test_getGenerator(){
+
+		$R = new Containers\Registry;
+
+		$values = [
+			"bloop" => "bleep",
+			"blop"  => "blep",
+			"blope" => "blepe",
+		];
+
+		$R->setMany($values);
+
+		foreach($R->iter() as $key => $value){
+			$this->assertArrayHasKey($key, $values);
+			$this->assertEquals($value, $values[$key]);
+		}
+
+	}
 }
 
