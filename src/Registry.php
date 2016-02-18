@@ -19,7 +19,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	 * @param mixed $value The value to store
 	 * @return
 	 */
-	function set($key, $value){
+	public function set($key, $value){
 		$this->map[$key] = $value;
 	}
 
@@ -28,7 +28,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	 * @param array $map The map of key => values
 	 * @return
 	 */
-	function setMany(array $map){
+	public function setMany(array $map){
 		foreach($map as $key => $value){
 			$this->set($key, $value);
 		}
@@ -39,7 +39,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	 * @param string $key The key of the value to retrieve
 	 * @return mixed
 	 */
-	function get($key){
+	public function get($key){
 		if(array_key_exists($key, $this->map)){
 			return $this->map[$key];
 		}
@@ -51,16 +51,27 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	 * @param string $key The key to check
 	 * @return bool
 	 */
-	function has($key){
+	public function has($key){
 		return array_key_exists($key, $this->map);
 	}
 
 	/**
 	 * Method to get an Iterator for the registry, allows looping
+	 * @deprecated
 	 * @return \ArrayIterator
 	 */
-	function getIterator(){
+	public function getIterator(){
 		return new \ArrayIterator($this->map);
+	}
+
+	/**
+	 * allow access via generator
+	 * @return mixed, mixed
+	 */
+	public function iter(){
+		foreach($this->map as $key => $value){
+			yield $key => $value;
+		}
 	}
 
 	/**
@@ -68,7 +79,7 @@ class Registry implements RegistryInterface, \Countable, \IteratorAggregate {
 	 * @link http://php.net/manual/en/countable.count.php
 	 * @return int
 	 */
-	function count() {
+	public function count() {
 		return count($this->map);
 	}
 }
