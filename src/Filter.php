@@ -6,20 +6,20 @@ class Filter {
 
 	protected $map = [];
 
-	function __construct(array $map){
+	public function __construct(array $map){
 		foreach($map as $k => $v){
 			$this->map[$k] = $v;
 		}
 	}
 
-	function get($name){
+	public function get($name){
 		if(!isset($this->map[$name])){
 			return null;
 		}
 		return $this->map[$name];
 	}
 
-	function getFiltered($name, callable $callback = null){
+	public function getFiltered($name, callable $callback = null){
 		$value = $this->get($name);
 		if($value != null && $callback){
 			return call_user_func($callback, $value, $name);
@@ -27,11 +27,11 @@ class Filter {
 		return $value;
 	}
 
-	function getAll(){
+	public function getAll(){
 		return $this->map;
 	}
 
-	function getAllFiltered(callable $callback = null){
+	public function getAllFiltered(callable $callback = null){
 		$values = $this->getAll();
 		if($callback){
 			array_walk_recursive($values, $callback);

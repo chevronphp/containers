@@ -14,13 +14,13 @@ interface RegistryInterface {
 	 * @param mixed $value The value to store
 	 * @return
 	 */
-	function set($key, $value);
+	public function set($key, $value);
 
 	/**
 	 * Method to retrieve the value stored at key
 	 * @param scalar $key The key of the value to retrieve
 	 * @return mixed
 	 */
-	function get($key);
+	public function get($key);
 
 }

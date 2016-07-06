@@ -58,14 +58,4 @@ class ServiceLoaderTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals(1, $O->var);
 	}
 
-	/**
-	 * @expectedException \Exception
-	 */
-	// function test_demoClass2(){
-	// 	$path = __DIR__ . "/nothelpers";
-	// 	$di = (new \Chevron\Containers\ServiceLoader)->loadDi($path);
-
-	// 	$di->set("error", 404);
-	// }
-
 }

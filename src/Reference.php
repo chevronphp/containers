@@ -20,7 +20,7 @@ class Reference extends Registry implements RegistryInterface {
 	 * @param array &$map The array to reference
 	 * @return
 	 */
-	function __construct( &$map = null ) {
+	public function __construct( &$map = null ) {
 		if( $map === null ) {
 			$map = array();
 		}

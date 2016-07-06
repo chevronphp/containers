@@ -18,7 +18,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * unshift values to our list
 	 * @param mixed $value
 	 */
-	function lpush($value){
+	public function lpush($value){
 		array_unshift($this->map, $value);
 	}
 
@@ -26,7 +26,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * push values to our list
 	 * @param mixed $value
 	 */
-	function rpush($value){
+	public function rpush($value){
 		// array_push
 		$this->map[] = $value;
 	}
@@ -35,7 +35,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * shift values off our list
 	 * @return mixed
 	 */
-	function lpop(){
+	public function lpop(){
 		if($this->count() <= 0) return null;
 		return array_shift($this->map);
 	}
@@ -44,7 +44,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * pop values off our array
 	 * @return mixed
 	 */
-	function rpop(){
+	public function rpop(){
 		if($this->count() <= 0) return null;
 		return array_pop($this->map);
 	}
@@ -53,7 +53,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * \Countable -- how big is our list
 	 * @return int
 	 */
-	function count(){
+	public function count(){
 		return count($this->map);
 	}
 
@@ -61,7 +61,7 @@ class Set implements SetInterface, \Countable, \IteratorAggregate {
 	 * spin off an iterator for our list
 	 * @return \ArrayIterator
 	 */
-	function getIterator(){
+	public function getIterator(){
 		return new \ArrayIterator($this->map);
 	}
 

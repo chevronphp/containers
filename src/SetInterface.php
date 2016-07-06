@@ -12,30 +12,30 @@ interface SetInterface {
 	 * unshift values to our list
 	 * @param mixed $value
 	 */
-	function lpush($value);
+	public function lpush($value);
 
 	/**
 	 * push values to our list
 	 * @param mixed $value
 	 */
-	function rpush($value);
+	public function rpush($value);
 
 	/**
 	 * shift values off our list
 	 * @return mixed
 	 */
-	function lpop();
+	public function lpop();
 
 	/**
 	 * pop values off our array
 	 * @return mixed
 	 */
-	function rpop();
+	public function rpop();
 
 	/**
 	 * \Countable -- how big is our list
 	 * @return int
 	 */
-	function count();
+	public function count();
 
 }

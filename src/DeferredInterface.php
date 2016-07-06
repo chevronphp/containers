@@ -14,7 +14,7 @@ interface DeferredInterface extends RegistryInterface {
 	 * @param string $key The key of the value to retrieve
 	 * @return mixed
 	 */
-	function get($key);
+	public function get($key);
 
 	/**
 	 * Method to retrieve the value stored at key via another invocation.
@@ -22,6 +22,6 @@ interface DeferredInterface extends RegistryInterface {
 	 * @param array $args The args to pass the callable
 	 * @return mixed
 	 */
-	function getNew($key, array $args = []);
+	public function getNew($key, array $args = []);
 
 }

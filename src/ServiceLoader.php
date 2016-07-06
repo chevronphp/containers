@@ -21,13 +21,13 @@ use \Chevron\ObjectLoader\ObjectLoader;
  */
 class ServiceLoader {
 
-	function loadServices($path){
+	public function loadServices($path){
 
 		return (new ObjectLoader)->loadObject(new Di, $path);
 
 	}
 
-	function loadDi($path){
+	public function loadDi($path){
 		return $this->loadServices($path);
 	}
 
