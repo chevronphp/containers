@@ -19,7 +19,7 @@ class Deferred extends Registry implements DeferredInterface, DiInterface {
 	 * @param string $key The key of the value
 	 * @return mixed
 	 */
-	function raw($key){
+	public function raw($key){
 		return parent::get($key);
 	}
 
@@ -29,7 +29,7 @@ class Deferred extends Registry implements DeferredInterface, DiInterface {
 	 * @param string $key The key of the value to retrieve
 	 * @return mixed
 	 */
-	function get($key){
+	public function get($key){
 		return $this->once($key);
 	}
 
@@ -39,7 +39,7 @@ class Deferred extends Registry implements DeferredInterface, DiInterface {
 	 * @param array $args The args to pass the callable
 	 * @return mixed
 	 */
-	function getNew($key, array $args = []){
+	public function getNew($key, array $args = []){
 		return $this->invoke($key, $args);
 
 	}
@@ -50,7 +50,7 @@ class Deferred extends Registry implements DeferredInterface, DiInterface {
 	 * @param array $args The values to pass to the lambda
 	 * @return mixed
 	 */
-	function once($key, array $args = []) {
+	protected function once($key, array $args = []) {
 
 		if(!isset($this->called[$key])) {
 			$this->called[$key] = $this->invoke($key, $args);
@@ -66,7 +66,7 @@ class Deferred extends Registry implements DeferredInterface, DiInterface {
 	 * @param array $args The values to pass to the lambda
 	 * @return mixed
 	 */
-	function invoke($key, array $args = []){
+	protected function invoke($key, array $args = []){
 
 		if(!array_key_exists($key, $this->map) ) {
 			return null;
