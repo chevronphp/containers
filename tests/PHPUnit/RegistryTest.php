@@ -4,6 +4,30 @@ use Chevron\Containers;
 
 class RegistryTest extends PHPUnit_Framework_TestCase {
 
+	function test___construct_mod_via_reference(){
+
+		$base = array("one" => 1, "two" => 2, "three" => 3);
+
+		$ref = new Containers\Registry($base);
+
+		$ref->set("one", 5);
+
+		$this->assertEquals($base["one"], 5);
+
+	}
+
+	function test___construct_mod_via_array(){
+
+		$base = array("one" => 1, "two" => 2, "three" => 3);
+
+		$ref = new Containers\Registry($base);
+
+		$base["one"] = 5;
+
+		$this->assertEquals($ref->get("one"), 5);
+
+	}
+
 	function test_count_and_set(){
 
 		$R = new Containers\Registry;
@@ -30,6 +54,20 @@ class RegistryTest extends PHPUnit_Framework_TestCase {
 		$has = $R->has("bloop");
 
 		$this->assertEquals($has, true);
+
+	}
+
+	function test_del(){
+
+		$R = new Containers\Registry;
+
+		$pre = count($R);
+
+		$R->set("bloop", "bleep");
+
+		$this->assertEquals($R->get("bloop"), "bleep");
+		$R->del("bloop");
+		$this->assertEquals($R->get("bloop"), null);
 
 	}
 
@@ -67,30 +105,6 @@ class RegistryTest extends PHPUnit_Framework_TestCase {
 
 	}
 
-	function test_getIterator(){
-
-		$R = new Containers\Registry;
-
-		$R->setMany(array(
-			"bloop" => "bleep",
-			"blop" => "blep",
-			"blope" => "blepe",
-		));
-
-		$iter = $R->getIterator();
-
-		$isType = $iter InstanceOf \ArrayIterator;
-
-		$this->assertEquals($isType, true);
-
-		foreach($iter as $key => $value){
-			if(!$R->has($key)){
-				$this->fail("property not found in iteration");
-			}
-		}
-
-	}
-
 	function test_getGenerator(){
 
 		$R = new Containers\Registry;
@@ -103,7 +117,7 @@ class RegistryTest extends PHPUnit_Framework_TestCase {
 
 		$R->setMany($values);
 
-		foreach($R->iter() as $key => $value){
+		foreach($R->range() as $key => $value){
 			$this->assertArrayHasKey($key, $values);
 			$this->assertEquals($value, $values[$key]);
 		}
